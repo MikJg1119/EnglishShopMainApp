@@ -23,8 +23,12 @@ public class UserServiceImpl implements UserService{
     private UserRepository userRepository;
 
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public User save(UserRegistrationDto registrationDto) {
