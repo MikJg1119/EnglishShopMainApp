@@ -4,6 +4,7 @@ import com.sun.istack.FinalArrayList;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity
 @Table(name="Product")
@@ -17,7 +18,7 @@ public class Product {
     private String serialNumber;
     @Column(name="priceNetto")
     private Double priceNetto;
-    @Column(name="priceNetto")
+    @Column(name="priceBrutto")
     private Double priceBrutto;
     @Column(name="vat")
     private int vat;
@@ -31,6 +32,8 @@ public class Product {
     private String category;
     @Column(name="producer")
     private String producer;
+    @Lob
+    private byte [] photo;
     @Column(name="note")
     private String note;
     @Column(name="emptyField1")
@@ -130,6 +133,14 @@ public class Product {
         this.producer = producer;
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
     public String getNote() {
         return note;
     }
@@ -162,7 +173,7 @@ public class Product {
         this.emptyField3 = emptyField3;
     }
 
-    public Product(long id, String nameProduct, String serialNumber, Double priceNetto, Double priceBrutto, int vat, int quantity, int assumedQuantity, String expirationDate, String category, String producer, String note, String emptyField1, String emptyField2, String emptyField3) {
+    public Product(long id, String nameProduct, String serialNumber, Double priceNetto, Double priceBrutto, int vat, int quantity, int assumedQuantity, String expirationDate, String category, String producer, byte [] photo ,String note, String emptyField1, String emptyField2, String emptyField3) {
         this.id = id;
         this.nameProduct = nameProduct;
         this.serialNumber = serialNumber;
@@ -174,6 +185,7 @@ public class Product {
         this.expirationDate = expirationDate;
         this.category = category;
         this.producer = producer;
+        this.photo = photo;
         this.note = note;
         this.emptyField1 = emptyField1;
         this.emptyField2 = emptyField2;
@@ -194,6 +206,7 @@ public class Product {
                 ", expirationDate='" + expirationDate + '\'' +
                 ", category='" + category + '\'' +
                 ", producer='" + producer + '\'' +
+                ", photo=" + Arrays.toString(photo) +
                 ", note='" + note + '\'' +
                 ", emptyField1='" + emptyField1 + '\'' +
                 ", emptyField2='" + emptyField2 + '\'' +
