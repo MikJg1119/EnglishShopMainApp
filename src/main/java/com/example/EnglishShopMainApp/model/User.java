@@ -29,6 +29,8 @@ public class User implements Serializable {
 
     private String password;
 
+    @Column(name = "idUserGroup")
+    private long idUserGroup;
 
 
 
