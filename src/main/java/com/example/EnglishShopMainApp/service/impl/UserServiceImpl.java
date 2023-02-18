@@ -1,9 +1,10 @@
-package com.example.EnglishShopMainApp.service;
+package com.example.EnglishShopMainApp.service.impl;
 
 import com.example.EnglishShopMainApp.model.Role;
 import com.example.EnglishShopMainApp.model.User;
 import com.example.EnglishShopMainApp.model.dto.UserRegistrationDto;
 import com.example.EnglishShopMainApp.repository.UserRepository;
+import com.example.EnglishShopMainApp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,7 +18,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;

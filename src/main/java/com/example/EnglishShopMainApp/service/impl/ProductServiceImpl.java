@@ -1,8 +1,9 @@
-package com.example.EnglishShopMainApp.service;
+package com.example.EnglishShopMainApp.service.impl;
 
 import com.example.EnglishShopMainApp.Exception.ResourceNotFoundException;
 import com.example.EnglishShopMainApp.model.Product;
 import com.example.EnglishShopMainApp.repository.ProductRepository;
+import com.example.EnglishShopMainApp.service.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
